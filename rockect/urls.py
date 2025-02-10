@@ -1,11 +1,7 @@
-from django.http import HttpResponse
-from django.urls import path, include
-
-def home(request):
-    return HttpResponse("Welcome to my Django app!")
+from django.contrib import admin
+from django.urls import path
 
 urlpatterns = [
-    path('', home),  # Root URL
-    path('clg/', include('clg.urls')),  # Your 'clg' app
-    path('payments/', include('payments.urls')),  # Your 'payments' app
+    path('admin/', admin.site.urls),
+    path('',include('clg.urls')),
 ]
